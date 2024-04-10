@@ -60,7 +60,7 @@ descending order. The default value is "asc".
 * LastHour (returns data where the date value is equal to today’s date and the time is equal to the current hour-1 hour)
 * 15SecondsAgo (returns data where timestamp value is equal to current timestamp minus 15 seconds)
 * 5MinutesAgo (returns data where timestamp value is equal to current timestamp minus 5 seconds)
-* [date-value] to [date-value] The date-value should include the date and time component or the date component for applicable feeds. The date-value range should be within 366 days. Example: yyyy-mm-dd hh:mi to yyyy-mm-dd hh:mi
+* [date-value] to [date-value] The date-value should include the date and time component or the date component for applicable feeds. The date-value range should be within 366 days. <BR> **Example:** yyyy-mm-dd hh:mi to yyyy-mm-dd hh:mi
 
 15SecondsAgo and 5MinutesAgo are designed specifically for dispatch rates and unverified LMP feeds
 that update every 15 seconds and 5 minutes respectively, additionally these filters are designed to work
