@@ -69,10 +69,10 @@ def scrape(ip_list):
             response = get_response(csv_url, params=params)
             if response.status_code == 200:
                 total_rows = int(response.headers["X-TotalRows"])
-                if total_rows > params["rowCount"]:
-                    directory_path = (
-                        f"{ip_dict['title']}/{date.year}/{date.month}/{ date.day}/"
+                directory_path = (
+                        f"{ip_dict['title']}/{date.year}/{date.month}/{date.day}/"
                     )
+                if total_rows > params["rowCount"]:
                     os.makedirs(directory_path, exist_ok=True)
                     part = 1
                     while params["startRow"] < total_rows:
@@ -85,9 +85,6 @@ def scrape(ip_list):
                     print("skipping blank file")
                     continue
                 else:
-                    directory_path = (
-                        f"{ip_dict['title']}/{date.year}/{date.month}/{date.day}/"
-                    )
                     os.makedirs(directory_path, exist_ok=True)
                     save_file(f"{directory_path}{name}.csv", response)
             else:
