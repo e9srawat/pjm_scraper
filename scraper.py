@@ -1,5 +1,6 @@
 import os
 import gzip
+import time
 from datetime import datetime, timedelta
 import requests
 from retrying import retry
@@ -12,6 +13,8 @@ def get_response(url, params=None):
     """
     Hits the url and returns response, retries on on failure
     """
+    seconds_per_request = 60 / 6
+    time.sleep(seconds_per_request)
     if params:
         response = requests.get(
             url, params=params, headers=HEADERS, timeout=60, stream=False
